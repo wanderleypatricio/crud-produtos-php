@@ -6,6 +6,7 @@
                 method: "GET",
                 url: "login.php?usuario="+usuario+"&senha="+password,
                 success: function(response){
+                    alert(response);
                     if(response == "true"){
                         window.location = "views/painel.php";                   
                     }else{
