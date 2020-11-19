@@ -13,6 +13,6 @@
 interface funcoesDAO {
     public function salvar();
     public function alterar();
-    public function excluir();
-    public function listar();    
+    public function excluir($id);
+    public function listar($inicio, $qtde);    
 }
