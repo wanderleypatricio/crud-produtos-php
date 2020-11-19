@@ -97,6 +97,19 @@ class ProdutoDAO implements funcoesDAO {
             echo "Error: ". $ex->getMessage();
         }
     }
+    
+    public function listarProdutoID($id) {
+        try{
+            $sql = "select * from produtos where codigo = $id order by produto";
+            $db = $this->getBD();
+            $stm = $db->prepare($sql);
+            $stm->execute();
+            return $stm->fetchAll(PDO::FETCH_ASSOC);
+            
+        } catch (Exception $ex) {
+            echo "Error: ".$ex->getMessage();
+        }
+    }
 
     private function getDB(){
         return Connection::getConnection();
